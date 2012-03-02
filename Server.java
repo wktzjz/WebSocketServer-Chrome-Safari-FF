@@ -1,3 +1,24 @@
+<!--
+  Speed Test for bmp_lib.js
+
+  Copyright 2008 Neil Fraser.
+  http://neil.fraser.name/software/bmp_lib/
+
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+-->
+
+
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
@@ -121,14 +142,14 @@ class Sever1 extends Thread {
 					//		+ createChallenge(key1, key2, key3) + "\r\n";
 					out.write(response.getBytes());
 					out.write(createChallenge(key1, key2, key3));
-					System.out.println("·µ»Ø¸ø·þÎñÆ÷µÄresponse:" + response+byte2hex(createChallenge(key1, key2, key3)));
+					System.out.println("ï¿½ï¿½ï¿½Ø¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½response:" + response+byte2hex(createChallenge(key1, key2, key3)));
 				flag = true;
 				}	
 					byte b1[] = new byte[500];
 					int count1 = in.read(b1);
 					if (count1 == -1)break;// count=-1 page refreah,break to jump out of while					
 					String msg= new String(b1,1,count1-2);
-					System.out.println("½ÓÊÕµ½µÄÐÅÏ¢:" + msg);			
+					System.out.println("ï¿½ï¿½ï¿½Õµï¿½ï¿½ï¿½ï¿½ï¿½Ï¢:" + msg);			
 					out.write(b1);				
 					
 			} else { //Chrome or FF
@@ -167,7 +188,7 @@ class Sever1 extends Thread {
 			byte pushHead[] = null;
 			int count1 = in.read(b);
 			if (count1 == -1)break;// count=-1 page refreah,break to jump out of while
-			System.out.println("½ÓÊÕµ½µÄ×Ö½ÚÊý:" + count1);
+			System.out.println("ï¿½ï¿½ï¿½Õµï¿½ï¿½ï¿½ï¿½Ö½ï¿½ï¿½ï¿½:" + count1);
 			byte mask[] = new byte[4];
 			byte d[] = null;
 			int code_length = (b[1]) & 127;
@@ -345,14 +366,14 @@ class Sever1 extends Thread {
 	}
 	
 	  
-    public String byte2hex(byte[] b) { //Ò»¸ö×Ö½ÚµÄÊý£¬
+    public String byte2hex(byte[] b) { //Ò»ï¿½ï¿½ï¿½Ö½Úµï¿½ï¿½ï¿½ï¿½ï¿½
 
-        // ×ª³É16½øÖÆ×Ö·û´®
+        // ×ªï¿½ï¿½16ï¿½ï¿½ï¿½ï¿½ï¿½Ö·ï¿½ï¿½ï¿½
 
         String hs = "";
         String tmp = "";
         for (int n = 0; n < b.length; n++) {
-            //ÕûÊý×ª³ÉÊ®Áù½øÖÆ±íÊ¾
+            //ï¿½ï¿½ï¿½ï¿½×ªï¿½ï¿½Ê®ï¿½ï¿½ï¿½ï¿½ï¿½Æ±ï¿½Ê¾
 
             tmp = (java.lang.Integer.toHexString(b[n] & 0XFF));
             if (tmp.length() == 1) {
@@ -362,7 +383,7 @@ class Sever1 extends Thread {
             }
         }
         tmp = null;
-        return hs.toUpperCase(); //×ª³É´óÐ´
+        return hs.toUpperCase(); //×ªï¿½É´ï¿½Ð´
 
     }
     
