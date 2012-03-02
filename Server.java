@@ -1,8 +1,8 @@
 <!--
-  Speed Test for bmp_lib.js
+ WebSocketServer.java
 
-  Copyright 2008 Neil Fraser.
-  http://neil.fraser.name/software/bmp_lib/
+  Copyright Wang Kang.
+  wktzjz@yahoo.com.cn
 
   Licensed under the Apache License, Version 2.0 (the "License");
   you may not use this file except in compliance with the License.
